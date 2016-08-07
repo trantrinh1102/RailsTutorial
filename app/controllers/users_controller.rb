@@ -11,6 +11,7 @@ end
     @user = User.new(user_params)
     if @user.save
       # handle a success save
+      log_in @user
       flash[:success] = "Well come to sample app"
       redirect_to @user
     else
